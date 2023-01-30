@@ -11,43 +11,43 @@ import Frez from "./content/frez-content"
 
 export default [
     {
-        id: 0, 
+        id: '0', 
         image: scan,
         figcaption: '3Д сканирование и реверс инженеринг',
         content: ''
     },
     {
-        id: 1, 
+        id: '1', 
         image: demon,
         figcaption: '3Д печать по готовым моделям',
         content: <Pechat />
     },
     {
-        id: 2, 
+        id: '2', 
         image: detal,
         figcaption: 'Восстановление пластиковых деталей по образцу',
         content: <Copy /> 
     },
     {
-        id: 3, 
+        id: '3', 
         image: frezer,
         figcaption: 'Фрезеровка по дереву',
         content: <Frez />
     },
     {
-        id: 4, 
+        id: '4', 
         image: remont,
         figcaption: 'Обслуживание и ремонт 3Д принтеров',
         content: ''
     },
     {
-        id: 5, 
+        id: '5', 
         image: scan,
         figcaption: '3Д сканирование и реверс инженеринг',
         content: ''
     },
     {
-        id: 6, 
+        id: '6', 
         image: demon,
         figcaption: '3Д печать по готовым моделям',
         content: <Pechat /> 

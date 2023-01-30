@@ -13,7 +13,6 @@
 
 body {
     font-family: 'GothamPro';
-    font-size: 10px;
     margin: 0 auto;
 }
 .scroll-lock {
@@ -127,22 +126,32 @@ footer div {
     user-select: none;
 }
 
+.window {
+    width: 95%;
+    height: max-content;
+    margin: 0;
+    margin-left: 2.5%;
+    padding: 0;
+    overflow: hidden;
+}
+
 .gallery {
     display: flex;
     width: 100%;
-    height: auto;
-    justify-content: space-between;
+    margin: 4% 0;
     align-items: center;
 
-    overflow: hidden;
+    transition: .5s ease-in-out;
 }
 .gallery figure {
     background-color: #d9d9d9;
     border-radius: 30px;
-    width: 25vw;
+    min-width: 25%;
+    max-width: 25%;
+    margin: 0 3.3%;
 
     cursor: pointer;
-    transition: transform .5s ease-in-out;
+    transition: .5s;
 }
 .gallery img {
     width: 100%;
@@ -151,21 +160,41 @@ footer div {
 }
 .gallery figcaption {
     text-align: center;
-    font-size: 15px;
+    font-size: 1rem;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 20px;
     padding-bottom: 25px;
 }
-#main-figure{
-    width: 30%;
-    height: auto;
+
+.gallery figure.main {
+    min-width: 30%;
+    max-width: 30%;
+    font-size: 1.875rem;
     font-weight: bold;
+    cursor: default;
+
+    transition: .5s;
 }
-#main-figure figcaption {
-    padding-top: 30px;
-    padding-bottom: 40px;
+
+.gallery-content {
+    display: none;
+    transition: .5s;
 }
+.gallery-content.main {
+    display: block;
+}
+
+.devider {
+    display: block;
+    width: 95%;
+    margin-left: 2.5%;
+    background-color: black;
+    border-radius: 5px;
+    height: 0.5rem;
+
+}
+
 
 .new-line {
     clear: both;
