@@ -1,15 +1,31 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function Burger() {
+export default function Burger(props) {
   const icon = document.getElementById("nav-icon");
   const block = document.getElementById("nav-block");
+  const navigate = useNavigate()
 
   const [open, setOpen] = useState(false);
   const handleClick = () => {
     setOpen((prevState) => !prevState);
     document.body.classList.toggle("scroll-lock");
   };
+
+  useEffect(() => {
+    if (!open) document.body.classList.remove("scroll-lock")
+  }, [])
+
+  const onServicePrize = () => {
+    navigate("/service-prize")
+  }
+  const onOrder = () => {
+    navigate("/order")
+  }
+  const onMaterialType = () => {
+    navigate("/material-type")
+  }
 
   return (
     <div>
@@ -19,16 +35,16 @@ export default function Burger() {
         <span></span>
         <span></span>
       </div>
-      <h1 className="description">Главная</h1>
+      <h1 className="description">{props.name}</h1>
       <div id="nav-block" className={open ? "open" : ""}>
         <h1>Услуги</h1>
 
         <ul>
           <li>
-            <a>Расчитать стоимость услуги</a>
+            <a onClick={onServicePrize}>Как производится расчёт стоимости услуги?</a>
           </li>
           <li>
-            <a>Заказать услугу</a>
+            <a onClick={onOrder}>Заказать услугу</a>
           </li>
         </ul>
 
@@ -36,7 +52,7 @@ export default function Burger() {
 
         <ul>
           <li>
-            <a>Какие материалы для чего используются?</a>
+            <a onClick={onMaterialType}>Какие материалы для чего используются?</a>
           </li>
         </ul>
       </div>

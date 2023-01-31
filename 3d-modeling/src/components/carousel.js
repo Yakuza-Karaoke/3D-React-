@@ -7,33 +7,37 @@ export default function Carousel() {
   const [data, setData] = useState(dataForm);
   const [slide, setSlide] = useState(1);
   const [moveX, setMoveX] = useState(0);
-  const pageWidth = window.innerWidth;
-
-  const offset = pageWidth * 0.95 * (0.25 + 0.066);
+  const [moveContentX, setMoveContentX] = useState(0)
+  const [pageWidth, setPageWidth] = useState(window.innerWidth);
+  const [offset, setOffset] = useState(pageWidth * 0.95 * (0.25 + 0.066));
 
   useEffect(() => {
     document.getElementById(data[slide - 1].id).onclick = () => {
       if (slide === 1) {
         setSlide(5);
         setMoveX(-(offset * 4));
+        setMoveContentX(-(95*4))
       } else {
         setSlide((prevSlide) => prevSlide - 1);
         setMoveX((prevMoveX) => prevMoveX + offset);
+        setMoveContentX(prevMoveContentX => prevMoveContentX + 95)
       }
       document.getElementById(data[slide].id).classList.remove("main");
     };
 
     document.getElementById(data[slide].id).classList.add("main");
-    
+
     document.getElementById(data[slide].id).onclick = null;
 
     document.getElementById(data[slide + 1].id).onclick = () => {
       if (slide === 5) {
         setSlide(1);
         setMoveX(0);
+        setMoveContentX(0)
       } else {
         setSlide((prevSlide) => prevSlide + 1);
         setMoveX((prevMoveX) => prevMoveX - offset);
+        setMoveContentX(prevMoveContentX => prevMoveContentX - 95)
       }
 
       document.getElementById(data[slide].id).classList.remove("main");
@@ -72,12 +76,12 @@ export default function Carousel() {
           <figcaption>{data[6].figcaption}</figcaption>
         </figure>
       </div>
-      <span className="devider"/>
+      <span className="divider" />
 
-      <div className="gallery-content">
-        <div id="">{data[1].content}</div>
-        <div id="">{data[2].content}</div>
-        <div id="">{data[3].content}</div>
+      <div className="gallery-content" style={{transform: `translateX(${moveContentX}vw)`}}>
+        <div>{data[1].content}</div>
+        <div>{data[2].content}</div>
+        <div>{data[3].content}</div>
       </div>
     </div>
   );

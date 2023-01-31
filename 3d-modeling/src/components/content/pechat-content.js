@@ -9,21 +9,14 @@ export default function Pechat() {
       <h1 style={{marginTop: "2rem"}}>Новости нашей студии</h1>
 
       <div className="square-block">
-        <div
-          style={{
-            flexDirection: "column",
-            marginTop: "2%",
-            marginBottom: "2%",
-            marginLeft: "6%",
-          }}
-        >
-          <img src={plus} alt="plus" height="200px" />
-          <p style={{ textAlign: "center", fontSize: "24px" }}>
+        <figure>
+          <img src={plus} alt="plus" height="150px" />
+          <figcaption>
             22.01.2023 <br />
             19:21
-          </p>
-        </div>
-        <p style={{ marginTop: "9%", textAlign: "center", fontSize: "24px" }}>
+          </figcaption>
+        </figure>
+        <p>
           Была добавлена вкладка “Выбор материала для FDM печати”. Предлагаем
           ознакомиться с представленным материалом, чтобы иметь понимание
           назанчения разных типов материалов. <br />
@@ -36,22 +29,14 @@ export default function Pechat() {
         className="square-block"
         style={{ marginTop: "3%", marginBottom: "60px" }}
       >
-        <div
-          style={{
-            flexDirection: "column",
-            marginBottom: "2%",
-            marginLeft: "6%",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <img src={globus} alt="plus" height="200px" />
-          <p style={{textAlign: "center", fontSize: "24px"}}>
+        <figure>
+          <img src={globus} alt="plus" height="150px" />
+          <figcaption>
             22.01.2023 <br />
             18:00
-          </p>
-        </div>
-        <p style={{ marginTop: "9%", textAlign: "center", fontSize: "24px" }}>
+          </figcaption>
+        </figure>
+        <p>
           Мы запустили сайт! Спустя продолжительное время дизайна и разработки
           была представлена текущая версия сайта. В ней имеется много
           недоработок и косяков. При их выявлении или проблемах с использованием
