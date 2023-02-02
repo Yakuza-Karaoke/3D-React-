@@ -8,7 +8,7 @@ export default function Pechat() {
     <div>
       <h1 style={{marginTop: "2rem"}}>Новости нашей студии</h1>
 
-      <div className="square-block">
+      <span className="square-block">
         <figure>
           <img src={plus} alt="plus" height="150px" />
           <figcaption>
@@ -23,9 +23,9 @@ export default function Pechat() {
           <br />
           Хорошего дня!
         </p>
-      </div>
+      </span>
 
-      <div
+      <span
         className="square-block"
         style={{ marginTop: "3%", marginBottom: "60px" }}
       >
@@ -45,7 +45,7 @@ export default function Pechat() {
           <br />
           Приятного посещения и хорошего дня!
         </p>
-      </div>
+      </span>
     </div>
   );
 }
